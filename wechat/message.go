@@ -26,7 +26,7 @@ func HandlerMsg(c *gin.Context) {
 	switch {
 
 	case msgData.MsgType == msg.MsgTypeText:
-		go PushTextMsg(c, msgData, "Test Message.")
+		go PushText(c, msgData, "Test Message.")
 	case msgData.MsgType == msg.MsgTypeImage:
 		//TODO Image message handle.
 	case msgData.MsgType == msg.MsgTypeVoice:
@@ -45,7 +45,7 @@ func HandlerMsg(c *gin.Context) {
 
 }
 
-func PushTextMsg(c *gin.Context, msgData *msg.ReceiveMsg, content string) {
+func PushText(c *gin.Context, msgData *msg.ReceiveMsg, content string) {
 
 	text := new(msg.TextMsg)
 	text.MsgType = msg.MsgTypeText
