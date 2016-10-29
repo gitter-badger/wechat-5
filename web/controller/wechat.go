@@ -28,3 +28,7 @@ func WeChatOauth2(c *gin.Context) {
 	redirect := service.GetOAath2Url()
 	c.Redirect(http.StatusOK, redirect)
 }
+
+func OAuth2Handler(c *gin.Context) {
+
+}
