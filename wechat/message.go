@@ -64,3 +64,21 @@ func PushTextMsg(c *gin.Context, msgData *msg.ReceiveMsg, content string) {
 
 	c.XML(http.StatusOK, string(xmlByte))
 }
+
+func PushNews(c *gin.Context, msgData *msg.ReceiveMsg,artcle []*msg.Article){
+
+	news := new(msg.NewsMsg)
+
+	news.ArticleCount = len(artcle)
+	news.Articles = artcle
+
+	xmlByte, err := xml.Marshal(news)
+
+	if err != nil {
+		log4go.Error(err)
+	}
+
+	log4go.Debug(string(xmlByte))
+
+	c.XML(http.StatusOK, string(xmlByte))
+}
