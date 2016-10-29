@@ -1,4 +1,4 @@
-# wechat
+# WeChat for Golang
 WeChat Manager for Golang 
 
 
