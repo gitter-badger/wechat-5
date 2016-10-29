@@ -16,7 +16,7 @@ func initRouteList() *gin.Engine {
 	router.GET("/core", controller.WeChatInit)
 	router.POST("/core", controller.WeChatService)
 
-	router.POST("/manager/menu", controller.WeChatMenuCreate)
+	router.POST("/manager/menu", controller.MenuCreate)
 
 	return router
 }
