@@ -4,6 +4,8 @@ import (
 	"github.com/alecthomas/log4go"
 	"github.com/dlintw/goconf"
 	"gopkg.in/redis.v5"
+	"path"
+	"runtime"
 )
 
 type WeConf struct {
@@ -13,13 +15,19 @@ type WeConf struct {
 }
 
 var (
-	Cache  *redis.Client
-	WeChat *WeConf
+	Cache    *redis.Client
+	WeChat   *WeConf
+	filepath string
 )
+
+func init() {
+	_, filename, _, _ := runtime.Caller(0)
+	filepath = path.Dir(filename) + "/speedy.conf"
+}
 
 func InitCache() {
 
-	config, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/wechat/config/speedy.conf")
+	config, _ := goconf.ReadConfigFile(filepath)
 
 	host, _ := config.GetString("redis", "redis.host")
 	passwd, _ := config.GetString("redis", "redis.password")
@@ -44,7 +52,7 @@ func InitCache() {
 
 func InitWeConf() {
 
-	config, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/wechat/config/speedy.conf")
+	config, _ := goconf.ReadConfigFile(filepath)
 
 	token, _ := config.GetString("wechat", "wechat.token")
 	appid, _ := config.GetString("wechat", "wechat.appid")

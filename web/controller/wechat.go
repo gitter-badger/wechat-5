@@ -32,6 +32,7 @@ func WeChatMenuCreate(c *gin.Context) {
 
 	if data == "" {
 		c.String(http.StatusOK, "%v", "Request Bad.")
+		return
 	}
 
 	menu := new(wechat.Menu)
@@ -39,8 +40,10 @@ func WeChatMenuCreate(c *gin.Context) {
 
 	if err != nil {
 		log4go.Error(err)
+		c.String(http.StatusInternalServerError, "%v", err.Error())
+	} else {
+		res := menu.Create()
+		c.JSON(http.StatusOK, res)
 	}
 
-	res := menu.Create()
-	c.JSON(http.StatusOK, res)
 }
