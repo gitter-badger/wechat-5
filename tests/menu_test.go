@@ -18,7 +18,7 @@ func init() {
 
 func Test_Create(t *testing.T) {
 
-	conf, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/speedy/config/speedy.conf")
+	conf, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/wechat/config/speedy.conf")
 	data, _ := conf.GetString("wechat", "wechat.test.data")
 
 	menu := new(wechat.Menu)

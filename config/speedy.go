@@ -19,7 +19,7 @@ var (
 
 func InitCache() {
 
-	config, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/speedy/config/speedy.conf")
+	config, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/wechat/config/speedy.conf")
 
 	host, _ := config.GetString("redis", "redis.host")
 	passwd, _ := config.GetString("redis", "redis.password")
@@ -44,7 +44,7 @@ func InitCache() {
 
 func InitWeConf() {
 
-	config, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/speedy/config/speedy.conf")
+	config, _ := goconf.ReadConfigFile("/Users/Nico/Documents/software/gopath/src/nicosoft.org/wechat/config/speedy.conf")
 
 	token, _ := config.GetString("wechat", "wechat.token")
 	appid, _ := config.GetString("wechat", "wechat.appid")
