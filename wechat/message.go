@@ -58,14 +58,14 @@ func PushTextMsg(c *gin.Context, msgData *msg.ReceiveMsg, content string) {
 
 	if err != nil {
 		log4go.Error(err)
+		c.String(http.StatusInternalServerError, "%v", err.Error())
+	} else {
+		log4go.Debug(string(xmlByte))
+		c.XML(http.StatusOK, string(xmlByte))
 	}
-
-	log4go.Debug(string(xmlByte))
-
-	c.XML(http.StatusOK, string(xmlByte))
 }
 
-func PushNews(c *gin.Context, msgData *msg.ReceiveMsg,artcle []*msg.Article){
+func PushNews(c *gin.Context, msgData *msg.ReceiveMsg, artcle []*msg.Article) {
 
 	news := new(msg.NewsMsg)
 
@@ -76,9 +76,9 @@ func PushNews(c *gin.Context, msgData *msg.ReceiveMsg,artcle []*msg.Article){
 
 	if err != nil {
 		log4go.Error(err)
+		c.String(http.StatusInternalServerError, "%v", err.Error())
+	} else {
+		log4go.Debug(string(xmlByte))
+		c.XML(http.StatusOK, string(xmlByte))
 	}
-
-	log4go.Debug(string(xmlByte))
-
-	c.XML(http.StatusOK, string(xmlByte))
 }
