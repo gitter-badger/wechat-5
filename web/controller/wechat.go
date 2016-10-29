@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"github.com/alecthomas/log4go"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"nicosoft.org/wechat/web/service"
@@ -31,4 +32,19 @@ func WeChatOauth2(c *gin.Context) {
 
 func OAuth2Handler(c *gin.Context) {
 
+	code := c.Param("code")
+	state := c.Param("state")
+
+	log4go.Debug("OAuth2 code: %v,state: %v", code, state)
+
+	if code == "" {
+		c.String(http.StatusOK, "%v", "Request Bad.")
+		return
+	}
+
+	user := new(wechat.UserInfo)
+	token := user.GetToken(code)
+	result := user.GetUserInfo(token.OpenId, token.Token)
+
+	c.JSON(http.StatusOK, result)
 }
