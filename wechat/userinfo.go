@@ -7,7 +7,6 @@ import (
 	"net/http"
 	"nicosoft.org/wechat/utils"
 	"strings"
-	"github.com/revel/revel/cache"
 )
 
 type UserToken struct {
