@@ -14,7 +14,7 @@ func init() {
 
 	utils.LoadCache()
 
-	jobs.Run()
+	jobs.Start()
 }
 
 func main() {

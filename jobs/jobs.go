@@ -8,7 +8,7 @@ import (
 	"time"
 )
 
-func Run() {
+func Start() {
 	go AccessTokenJob()
 }
 
