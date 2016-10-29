@@ -23,7 +23,7 @@ func WeChatInit(c *gin.Context) {
 }
 
 func WeChatService(c *gin.Context) {
-	c.String(http.StatusOK, "%v", "Request Bad.")
+	wechat.HandlerMsg(c)
 }
 
 func WeChatMenuCreate(c *gin.Context) {
