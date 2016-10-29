@@ -11,6 +11,8 @@ const (
 	WECHAT_APPID       = "config:wechat:appid"
 	WECHAT_APPSECRET   = "config:wechat:appsecret"
 	WECHAT_ACCESSTOKEN = "config:wechat:accesstoken"
+	WECHAT_OAUTH2_URL  = "config:wechat:oauth2:url"
+	WECHAT_OAUTH2_TYPE = "config:wechat:oauth2:type"
 )
 
 type Cache struct {
@@ -23,6 +25,8 @@ func LoadCache() {
 	cache.Set(WECHAT_TOKEN, w.Token, 0)
 	cache.Set(WECHAT_APPID, w.Appid, 0)
 	cache.Set(WECHAT_APPSECRET, w.Appsecret, 0)
+	cache.Set(WECHAT_OAUTH2_URL, w.Oauth2Url, 0)
+	cache.Set(WECHAT_OAUTH2_TYPE, w.Oauth2Type, 0)
 }
 
 func (c *Cache) Set(key string, value interface{}, expiration time.Duration) bool {

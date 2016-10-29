@@ -9,9 +9,11 @@ import (
 )
 
 type WeConf struct {
-	Token     string
-	Appid     string
-	Appsecret string
+	Token      string
+	Appid      string
+	Appsecret  string
+	Oauth2Url  string
+	Oauth2Type string
 }
 
 var (
@@ -57,7 +59,8 @@ func InitWeConf() {
 	token, _ := config.GetString("wechat", "wechat.token")
 	appid, _ := config.GetString("wechat", "wechat.appid")
 	appsecret, _ := config.GetString("wechat", "wechat.appsecret")
+	oauth2Url, _ := config.GetString("wechat", "wechat.oauth2.url")
+	oauth2Type, _ := config.GetString("wechat", "wechat.oauth2.type")
 
-	WeChat = &WeConf{Token: token, Appid: appid, Appsecret: appsecret}
-
+	WeChat = &WeConf{Token: token, Appid: appid, Appsecret: appsecret, Oauth2Url: oauth2Url, Oauth2Type: oauth2Type}
 }

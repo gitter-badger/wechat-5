@@ -3,6 +3,7 @@ package controller
 import (
 	"github.com/gin-gonic/gin"
 	"net/http"
+	"nicosoft.org/wechat/web/service"
 	"nicosoft.org/wechat/wechat"
 )
 
@@ -21,4 +22,9 @@ func WeChatInit(c *gin.Context) {
 
 func WeChatService(c *gin.Context) {
 	wechat.HandlerMsg(c)
+}
+
+func WeChatOauth2(c *gin.Context) {
+	redirect := service.GetOAath2Url()
+	c.Redirect(http.StatusOK, redirect)
 }
