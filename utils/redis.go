@@ -14,7 +14,7 @@ const (
 	WECHAT_OAUTH2_URL  = "config:wechat:oauth2:url"
 	WECHAT_OAUTH2_TYPE = "config:wechat:oauth2:type"
 
-	WECHAT_USER_INFO = "wechat:user:info:openid:"
+	WECHAT_USER_INFO = "wechat:user:token:"
 )
 
 type Cache struct {

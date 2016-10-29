@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"nicosoft.org/wechat/utils"
 	"strings"
+	"github.com/revel/revel/cache"
 )
 
 type UserToken struct {
@@ -66,6 +67,16 @@ func (u *UserInfo) GetUserInfo(openid, token string) *UserInfo {
 
 	url := "https://api.weixin.qq.com/sns/userinfo?access_token=ACCESS_TOKEN&openid=OPENID&lang=zh_CN"
 	user := new(UserInfo)
+	cache := new(utils.Cache)
+
+
+	u := cache.Get(utils.WECHAT_USER_INFO+token)
+
+	if  u != ""{
+		log4go.Debug(u)
+		json.Unmarshal([]byte(u), &user)
+		return user
+	}
 
 	url = strings.Replace(url, "ACCESS_TOKEN", token, -1)
 	url = strings.Replace(url, "OPENID", openid, -1)
@@ -85,9 +96,7 @@ func (u *UserInfo) GetUserInfo(openid, token string) *UserInfo {
 	log4go.Debug(string(body))
 
 	json.Unmarshal(body, &user)
-
-	cache := new(utils.Cache)
-	cache.Set(utils.WECHAT_USER_INFO+user.openid, string(body), 7200)
+	cache.Set(utils.WECHAT_USER_INFO+token, string(body), 7200)
 
 	return user
 }
