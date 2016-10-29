@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"nicosoft.org/wechat/utils"
 	"strings"
+	"time"
 )
 
 type UserToken struct {
@@ -94,7 +95,7 @@ func (u *UserInfo) GetUserInfo(openid, token string) *UserInfo {
 	log4go.Debug(string(body))
 
 	json.Unmarshal(body, &user)
-	cache.Set(utils.WECHAT_USER_INFO+token, string(body), 7200)
+	cache.Set(utils.WECHAT_USER_INFO+token, string(body), time.Second * 7200)
 
 	return user
 }
