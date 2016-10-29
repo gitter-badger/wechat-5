@@ -20,7 +20,7 @@ var (
 	filepath string
 )
 
-func init() {
+func InitConf() {
 	_, filename, _, _ := runtime.Caller(0)
 	filepath = path.Dir(filename) + "/speedy.conf"
 }

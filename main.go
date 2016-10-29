@@ -8,6 +8,7 @@ import (
 )
 
 func init() {
+	config.InitConf()
 	config.InitCache()
 	config.InitWeConf()
 

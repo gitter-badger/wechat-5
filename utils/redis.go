@@ -18,12 +18,11 @@ type Cache struct {
 }
 
 func LoadCache() {
-	wechat := config.WeChat
+	w := config.WeChat
 	cache := new(Cache)
-	cache.Set(WECHAT_TOKEN, wechat.Token, 0)
-	cache.Set(WECHAT_APPID, wechat.Appid, 0)
-	cache.Set(WECHAT_APPSECRET, wechat.Appsecret, 0)
-
+	cache.Set(WECHAT_TOKEN, w.Token, 0)
+	cache.Set(WECHAT_APPID, w.Appid, 0)
+	cache.Set(WECHAT_APPSECRET, w.Appsecret, 0)
 }
 
 func (c *Cache) Set(key string, value interface{}, expiration time.Duration) bool {
