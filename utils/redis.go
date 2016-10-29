@@ -15,6 +15,8 @@ const (
 	WECHAT_OAUTH2_TYPE = "config:wechat:oauth2:type"
 
 	WECHAT_USER_INFO = "wechat:user:token:"
+
+
 )
 
 type Cache struct {
