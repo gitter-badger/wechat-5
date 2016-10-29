@@ -24,12 +24,7 @@ _testmain.go
 *.prof
 .DS_Store
 .idea/
-config/
-jobs/
-main.go
+
 speedy.iml
-tests/
-utils/
-web/
+
 wechat.iml
-wechat/
