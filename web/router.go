@@ -3,6 +3,7 @@ package web
 import (
 	"github.com/gin-gonic/gin"
 	"nicosoft.org/wechat/web/controller"
+	"os"
 )
 
 type Router struct {
@@ -11,7 +12,13 @@ type Router struct {
 
 func initRouteList() *gin.Engine {
 
+	viewpath, _ := os.Getwd()
+
 	router := gin.Default()
+	router.LoadHTMLGlob(viewpath + "/web/views/*")
+
+	router.GET("/login", controller.LoginPage)
+	router.POST("/login",controller.LoginHandler)
 
 	router.GET("/core", controller.WeChatInit)
 	router.POST("/core", controller.WeChatService)

@@ -4,6 +4,7 @@ import (
 	"nicosoft.org/wechat/config"
 	"nicosoft.org/wechat/utils"
 	"nicosoft.org/wechat/wechat"
+	"os"
 	"testing"
 )
 
@@ -20,5 +21,6 @@ func Test_AT(t *testing.T) {
 	at := new(wechat.AccessToken)
 	data := at.Get()
 	t.Log(data)
+	t.Log(os.Getwd())
 
 }

@@ -12,6 +12,7 @@ func init() {
 	config.InitCache()
 	config.InitWeConf()
 
+	utils.InitOrm()
 	utils.LoadCache()
 
 	jobs.Start()

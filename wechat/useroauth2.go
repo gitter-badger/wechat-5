@@ -69,9 +69,9 @@ func (u *UserInfo) GetUserInfo(openid, token string) *UserInfo {
 	user := new(UserInfo)
 	cache := new(utils.Cache)
 
-	cu := cache.Get(utils.WECHAT_USER_INFO+token)
+	cu := cache.Get(utils.WECHAT_USER_INFO + token)
 
-	if  cu != ""{
+	if cu != "" {
 		log4go.Debug(cu)
 		json.Unmarshal([]byte(cu), &user)
 		return user
@@ -95,7 +95,7 @@ func (u *UserInfo) GetUserInfo(openid, token string) *UserInfo {
 	log4go.Debug(string(body))
 
 	json.Unmarshal(body, &user)
-	cache.Set(utils.WECHAT_USER_INFO+token, string(body), time.Second * 7200)
+	cache.Set(utils.WECHAT_USER_INFO+token, string(body), time.Second*7200)
 
 	return user
 }

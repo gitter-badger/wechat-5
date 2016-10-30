@@ -3,6 +3,8 @@ package config
 import (
 	"github.com/alecthomas/log4go"
 	"github.com/dlintw/goconf"
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/go-xorm/xorm"
 	"gopkg.in/redis.v5"
 	"path"
 	"runtime"
@@ -19,17 +21,18 @@ type WeConf struct {
 var (
 	Cache    *redis.Client
 	WeChat   *WeConf
-	filepath string
+	Orm      *xorm.Engine
+	Filepath string
 )
 
 func InitConf() {
 	_, filename, _, _ := runtime.Caller(0)
-	filepath = path.Dir(filename) + "/speedy.conf"
+	Filepath = path.Dir(filename) + "/speedy.conf"
 }
 
 func InitCache() {
 
-	config, _ := goconf.ReadConfigFile(filepath)
+	config, _ := goconf.ReadConfigFile(Filepath)
 
 	host, _ := config.GetString("redis", "redis.host")
 	passwd, _ := config.GetString("redis", "redis.password")
@@ -54,7 +57,7 @@ func InitCache() {
 
 func InitWeConf() {
 
-	config, _ := goconf.ReadConfigFile(filepath)
+	config, _ := goconf.ReadConfigFile(Filepath)
 
 	token, _ := config.GetString("wechat", "wechat.token")
 	appid, _ := config.GetString("wechat", "wechat.appid")
