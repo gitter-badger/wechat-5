@@ -1,5 +1,7 @@
 # WeChat Manager for Golang
 
+[![wercker status](https://app.wercker.com/status/c000776f44bc6a5f49213c41a8ec8cd9/s/master "wercker status")](https://app.wercker.com/project/byKey/c000776f44bc6a5f49213c41a8ec8cd9)
+
 * 微信公众平台管理 基于GPL3.0条例开源 使用 Gin + xrom 搭建
 
 * 跟多功能持续开发中。。。
