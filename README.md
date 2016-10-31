@@ -2,7 +2,9 @@
 WeChat Manager for Golang 
 
 
-微信公众平台管理 基于GPL3.0条例开源 使用Gin + Redis.v5 + xrom 搭建
+* 微信公众平台管理 基于GPL3.0条例开源 使用Gin + Redis.v5 + xrom 搭建
+
+* 跟多功能持续开发中。。。
 
 ## 依赖
 
@@ -21,8 +23,6 @@ WeChat Manager for Golang
 5. 微信信息推送
 6. 微信信息交互管理
 7. 数据统计
-
-* 跟多功能持续开发中。。。
 
 ## 联系与建议
 
