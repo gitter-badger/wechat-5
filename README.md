@@ -6,11 +6,11 @@ WeChat Manager for Golang
 
 ## 依赖
 
-1.	Gin
-2.	Redis.v5
-3.	log4go 
-4.	goconf 
-5.	xrom
+*	Gin
+*	Redis.v5
+*	log4go 
+*	goconf 
+*	xrom
 
 ## 管理功能
 
