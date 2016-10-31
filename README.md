@@ -1,4 +1,4 @@
-# WeChat for Golang
+# WeChat Manager for Golang
 WeChat Manager for Golang 
 
 
@@ -21,7 +21,6 @@ WeChat Manager for Golang
 5. 微信信息推送
 6. 微信信息交互管理
 7. 数据统计
-8. 预留微信内置web程序开发
 
 * 跟多功能持续开发中。。。
 
