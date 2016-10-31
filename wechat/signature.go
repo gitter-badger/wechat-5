@@ -11,10 +11,10 @@ import (
 
 func CheckData(c *gin.Context) ([]string, string, string) {
 
-	signature := c.Param("signature")
-	timestamp := c.Param("timestamp")
-	nonce := c.Param("nonce")
-	echoStr := c.Param("echostr")
+	signature := c.Query("signature")
+	timestamp := c.Query("timestamp")
+	nonce := c.Query("nonce")
+	echoStr := c.Query("echostr")
 	token := new(utils.Cache).Get(utils.WECHAT_TOKEN)
 
 	return sort.StringSlice{token, timestamp, nonce}, signature, echoStr

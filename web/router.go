@@ -18,7 +18,7 @@ func initRouteList() *gin.Engine {
 	router.LoadHTMLGlob(viewpath + "/web/views/*")
 
 	router.GET("/login", controller.LoginPage)
-	router.POST("/login",controller.LoginHandler)
+	router.POST("/login", controller.LoginHandler)
 
 	router.GET("/core", controller.WeChatInit)
 	router.POST("/core", controller.WeChatService)

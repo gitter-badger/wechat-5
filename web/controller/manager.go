@@ -10,7 +10,7 @@ import (
 
 func MenuCreate(c *gin.Context) {
 
-	data := c.Param("menu")
+	data := c.Query("menu")
 
 	if data == "" {
 		c.String(http.StatusOK, "%v", "Request Bad.")

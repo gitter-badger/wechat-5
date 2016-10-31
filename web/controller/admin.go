@@ -12,7 +12,7 @@ func LoginPage(c *gin.Context) {
 }
 
 func LoginHandler(c *gin.Context) {
-	c.Request.ParseForm()
 
-	c.JSON(http.StatusOK, c.Request.Form)
+	//TODO login handler
+
 }
