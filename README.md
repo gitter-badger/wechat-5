@@ -1,8 +1,5 @@
 # WeChat Manager for Golang
 
-[![wercker status](https://github.com/speedyproject/wechat/commits/master "history")](https://github.com/speedyproject/wechat)
-
-
 * 微信公众平台管理 基于GPL3.0条例开源 使用 Gin + xrom 搭建
 
 * 跟多功能持续开发中。。。
