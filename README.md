@@ -1,5 +1,7 @@
 # WeChat Manager for Golang
 
+[![Join the chat at https://gitter.im/gksqls/Lobby](https://badges.gitter.im/gksqls/Lobby.svg)](https://gitter.im/gksqls/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 [![wercker status](https://app.wercker.com/status/c000776f44bc6a5f49213c41a8ec8cd9/s/master "wercker status")](https://app.wercker.com/project/byKey/c000776f44bc6a5f49213c41a8ec8cd9)
 
 * 微信公众平台管理 基于GPL3.0条例开源 使用 Gin + xrom 搭建
